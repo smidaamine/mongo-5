@@ -111,7 +111,10 @@ RUN set -x \
 ENV HOME /data/db
 
 COPY docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["docker-entrypoint.sh"]
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Use the entrypoint script to start the container
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 
 EXPOSE 27017
 CMD ["mongod"]
