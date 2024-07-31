@@ -104,7 +104,7 @@ RUN set -x \
     && rm -rf /var/lib/mongodb \
     && mv /etc/mongod.conf /etc/mongod.conf.orig
 
-VOLUME /data/db /data/configdb
+#VOLUME /data/db /data/configdb
 
 # ensure that if running as custom user that "mongosh" has a valid "HOME"
 # https://github.com/docker-library/mongo/issues/524
